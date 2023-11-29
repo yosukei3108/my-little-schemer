@@ -4,3 +4,6 @@
 
 ; 1
 (print (atom? (quote atom))) ;#t
+
+; 6
+(print (atom? (quote (atom)))) ;#f
