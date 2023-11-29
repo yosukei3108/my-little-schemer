@@ -7,3 +7,6 @@
 
 ; 6
 (print (atom? (quote (atom)))) ;#f
+
+;23
+(print (car ())) ; *** ERROR: pair required, but got ()
