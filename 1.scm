@@ -27,3 +27,6 @@
 
 ; 45
 (print (cons (quote a) (quote b))) ; (a . b) ; 脚注 5
+
+; 51
+(print (null? (quote spaghetti))) ; #f ; 脚注 8
