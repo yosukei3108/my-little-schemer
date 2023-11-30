@@ -22,5 +22,8 @@
 ; 43
 (print (cons (quote a) ())) ; (a)
 
+; 44
+(print (cons (quote ((a b c))) (quote b))) ; (((a b c)) . b) ; 脚注 5
+
 ; 45
 (print (cons (quote a) (quote b))) ; (a . b) ; 脚注 5
