@@ -11,16 +11,16 @@
 ; 23
 ; (print (car ())) ; *** ERROR: pair required, but got ()
 
-; 39
+; 40
 (print
   (cons
     (quote
       ((help) this))
     (quote
-      (is very ((hard) to learn))))) ; (((help) this) is very ((hard) to learn))
+      (is very ((hard) to learn))))) ; ((((help) this)) (is very ((hard) to learn)))
 
-; 42
+; 43
 (print (cons (quote a) ())) ; (a)
 
-; 44
+; 45
 (print (cons (quote a) (quote b))) ; (a . b) ; 脚注 5
