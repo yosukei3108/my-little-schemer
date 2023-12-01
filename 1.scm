@@ -21,6 +21,8 @@
 
 ; 43
 (print (cons (quote a) ())) ; (a)
+; () は (quote ()) と同じ？？
+(print (cons (quote a) (quote()))) ; (a)
 
 ; 44
 (print (cons (quote ((a b c))) (quote b))) ; (((a b c)) . b) ; 脚注 5
