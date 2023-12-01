@@ -32,3 +32,9 @@
 
 ; 51
 (print (null? (quote spaghetti))) ; #f ; 脚注 8
+
+; 62
+(print (eq? (quote Harry) (quote Harry))) ; #t
+
+; 65
+(print (eq? (quote ()) (quote (strawberry)))) ; #f ; 脚注 11
