@@ -38,3 +38,9 @@
 
 ; 65
 (print (eq? (quote ()) (quote (strawberry)))) ; #f ; 脚注 11
+
+; 66
+(print (eq? 6 7)) ; #f ; 脚注 12
+
+; 68
+(print (eq? (cdr (quote (soured milk))) (quote milk))) ; #f ; 脚注 11
