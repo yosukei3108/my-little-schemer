@@ -36,3 +36,8 @@
               (member? a (cdr lat)))))))
 
 (print (member? (quote meat) (quote (mashed potetos and meat gravy)))) ; #t
+
+(print (member? (quote meat) (quote ((mashed potetos) and meat gravy)))) ; #t
+
+; (print (member? (quote meat) (quote (mashed potetos and (meat gravy)))))
+; *** ERROR: unbound variable: nil
