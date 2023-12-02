@@ -11,3 +11,6 @@
 
 ; 7
 (print (lat? (quote (bacon and eggs)))) ; #t
+
+; 29
+(print (lat? (quote (bacon (and eggs))))) ; #f
