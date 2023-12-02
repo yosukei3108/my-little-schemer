@@ -18,6 +18,8 @@
 ; 40
 (print (eq? #t else)) ; #f
 (print (eq? else #t)) ; #f
+(print (eq? #f else)) ; #f
+(print (eq? else #f)) ; #f
 
 ; 41
 (print else) ; #<syntax else>
