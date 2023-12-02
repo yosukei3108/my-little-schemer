@@ -21,3 +21,6 @@
 
 ; 41
 (print else) ; #<syntax else>
+
+; 47
+(print (or (null? ()) (atom? (d e f g)))) ; #t
