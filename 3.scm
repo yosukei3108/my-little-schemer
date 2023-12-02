@@ -37,3 +37,7 @@
 ; lettuce
 (print (cons (quote lettuce) (cdr (quote (and tomato)))))
 ; (lettuce tomato)
+
+; 87
+(print (rember (quote sauce) (quote (soy sauce and tomato sauce))))
+; (soy and tomato sauce)
