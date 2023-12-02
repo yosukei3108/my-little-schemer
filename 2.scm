@@ -26,3 +26,13 @@
 
 ; 47
 (print (or (null? ()) (atom? (d e f g)))) ; #t
+
+; 53
+(define member?
+  (lambda (a lat)
+    (cond
+      ((null? lat) nil)
+      (else (or (eq? (car lat) a)
+              (member? a (cdr lat)))))))
+
+(print (member? (quote meat) (quote (mashed potetos and meat gravy)))) ; #t
