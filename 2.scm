@@ -51,3 +51,6 @@
 (print (member? (quote meat) (quote (mashed potetos and meat gravy)))) ; #t
 (print (member? (quote meat) (quote ((mashed potetos) and meat gravy)))) ; #t
 (print (member? (quote meat) (quote (mashed potetos and (meat gravy))))) ; #f
+
+; 105
+(print (member? (quote liver) (quote (bagles and lox)))) ; #f
