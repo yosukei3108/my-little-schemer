@@ -41,3 +41,39 @@
 ; 87
 (print (rember (quote sauce) (quote (soy sauce and tomato sauce))))
 ; (soy and tomato sauce)
+
+; 94
+(define firsts
+  (lambda (l)
+    (cond
+      ((null? l) (quote ()))
+      (else (cons (car (car l)) (firsts (cdr l)))))))
+
+; 88
+(print
+  (firsts
+    (quote ((apple peach pumpkin)
+            (plum pear cherry)
+            (grape raisin pea)
+            (bean carrot eggplant)))))
+; (apple plum grape bean)
+
+; 89
+(print
+  (firsts
+    (quote ((a b) (c d) (e f)))))
+; (a c e)
+
+; 90
+(print
+  (firsts
+    (quote ())))
+; ()
+
+; 92
+(print
+  (firsts
+    (quote (((five plums) four)
+            (eleven green oranges)
+            ((no) more)))))
+; ((five plums) eleven (no))
