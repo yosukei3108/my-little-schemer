@@ -14,3 +14,10 @@
 
 ; 29
 (print (lat? (quote (bacon (and eggs))))) ; #f
+
+; 40
+(print (eq? #t else)) ; #f
+(print (eq? else #t)) ; #f
+
+; 41
+(print else) ; #<syntax else>
