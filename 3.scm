@@ -21,7 +21,7 @@
 (print (rember (quote and) (quote (and tomato))))
 ; (tomato)
 
-; 62
+; 63
 (print (rember (quote and) (quote (lettuce and tomato))))
 ; (lettuce tomate)
 (print (car (quote (lettuce and tomato))))
