@@ -9,3 +9,7 @@
 ; 17
 (print (rember (quote bacon) (quote (bacon lettuce and tomato))))
 ; (lettuce and tomato)
+
+; 27
+(print (rember (quote and) (quote (bacon lettuce and tomato))))
+; (tomato)
