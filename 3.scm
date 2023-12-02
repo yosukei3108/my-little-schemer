@@ -91,3 +91,23 @@
             (c d)
             (e f)))))
 ; (b d f)
+
+; 132
+(define insertR
+  (lambda (new old lat)
+    (cond
+      ((null? lat) (quote ()))
+      (else
+        (cond
+          ((eq? (car lat) old) (cdr lat))
+          (else (cons (car lat)
+                  (insertR new old
+                    (cdr lat)))))))))
+
+; 133
+(print
+  (insertR
+    (quote topping)
+    (quote fudge)
+    (quote (ice cream with fudge for dessert))))
+; (ice cream with for dessert)
