@@ -77,3 +77,17 @@
             (eleven green oranges)
             ((no) more)))))
 ; ((five plums) eleven (no))
+
+; 105
+(define seconds
+  (lambda (l)
+    (cond
+      ((null? l) (quote ()))
+      (else (cons (car (cdr (car l))) (seconds (cdr l)))))))
+
+(print
+  (seconds
+    (quote ((a b)
+            (c d)
+            (e f)))))
+; (b d f)
