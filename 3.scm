@@ -1,4 +1,4 @@
-(define rember
+(define rember_before70
   (lambda (a lat)
     (cond
       ((null? lat) (quote ()))
@@ -6,6 +6,15 @@
               ((eq? (car lat) a) (cdr lat))
               (else (cons (car lat)
                 (rember a (cdr lat)))))))))
+
+; 70
+(define rember
+  (lambda (a lat)
+    (cond
+      ((null? lat) (quote ()))
+      ((eq? (car lat) a) (cdr lat))
+      (else (cons (car lat)
+        (rember a (cdr lat)))))))
 
 ; 17
 (print (rember (quote bacon) (quote (bacon lettuce and tomato))))
