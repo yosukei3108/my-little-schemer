@@ -28,16 +28,26 @@
 (print (or (null? ()) (atom? (d e f g)))) ; #t
 
 ; 53
+; (define member?
+;   (lambda (a lat)
+;     (cond
+;       ((null? lat) nil)
+;       (else (or (eq? (car lat) a)
+;               (member? a (cdr lat)))))))
+
+; (print (member? (quote meat) (quote (mashed potetos and meat gravy)))) ; #t
+; (print (member? (quote meat) (quote ((mashed potetos) and meat gravy)))) ; #t
+; (print (member? (quote meat) (quote (mashed potetos and (meat gravy)))))
+; *** ERROR: unbound variable: nil
+
+; replaced nil with #f in member?
 (define member?
   (lambda (a lat)
     (cond
-      ((null? lat) nil)
+      ((null? lat) #f)
       (else (or (eq? (car lat) a)
               (member? a (cdr lat)))))))
 
 (print (member? (quote meat) (quote (mashed potetos and meat gravy)))) ; #t
-
 (print (member? (quote meat) (quote ((mashed potetos) and meat gravy)))) ; #t
-
-; (print (member? (quote meat) (quote (mashed potetos and (meat gravy)))))
-; *** ERROR: unbound variable: nil
+(print (member? (quote meat) (quote (mashed potetos and (meat gravy))))) ; #f
