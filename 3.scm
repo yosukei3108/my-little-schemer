@@ -117,3 +117,42 @@
 ; (ice cream with topping for dessert)
 ; 141
 ; (ice cream with fudge topping for dessert)
+
+; 145
+; (define subst2
+;   (lambda (new o1 o2 lat)
+;     (cond
+;       ((null? lat) (quote ()))
+;       (else
+;         (cond
+;           ((eq? (car lat) o1)
+;             (cons new (cdr lat)))
+;           ((eq? (car lat) o2)
+;             (cons new (cdr lat)))
+;           (else (cons (car lat)
+;                   (subst2 new o1 o2
+;                     (cdr lat)))))))))
+
+; 146
+(define subst2
+  (lambda (new o1 o2 lat)
+    (cond
+      ((null? lat) (quote ()))
+      (else
+        (cond
+          (or (eq? (car lat) o1) (eq? (car lat) o2)
+            (cons new (cdr lat)))
+          (else (cons (car lat)
+                  (subst2 new o1 o2
+                    (cdr lat)))))))))
+
+(print
+  (subst2
+    (quote vanilla)
+    (quote chocolate)
+    (quote banana)
+    (quote (banana ice cream with chocolate topping))))
+; 145
+; (vanilla ice cream with chocolate topping)
+; 146
+; (vanilla ice cream with chocolate topping)
