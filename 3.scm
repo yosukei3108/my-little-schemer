@@ -92,14 +92,16 @@
             (e f)))))
 ; (b d f)
 
-; 132
+; 132, 136, 141
 (define insertR
   (lambda (new old lat)
     (cond
       ((null? lat) (quote ()))
       (else
         (cond
-          ((eq? (car lat) old) (cdr lat))
+          ((eq? (car lat) old)
+             (cons old                ; 141
+               (cons new (cdr lat)))) ; 136
           (else (cons (car lat)
                   (insertR new old
                     (cdr lat)))))))))
@@ -111,3 +113,7 @@
     (quote fudge)
     (quote (ice cream with fudge for dessert))))
 ; (ice cream with for dessert)
+; 136
+; (ice cream with topping for dessert)
+; 141
+; (ice cream with fudge topping for dessert)
