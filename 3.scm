@@ -234,3 +234,23 @@
   (quote fish)
   (quote (chips and fish or fish and fried))))
 ; (chips and fried fish or fried fish and fried)
+
+; 183
+(define multisubst
+  (lambda (new old lat)
+    (cond
+      ((null? lat) (quote ()))
+      (else
+        (cond
+          ((eq? (car lat) old)
+            (cons new
+              (multisubst new old (cdr lat))))
+          (else
+            (cons (car lat)
+              (multisubst new old (cdr lat)))))))))
+
+(print (multisubst
+  (quote cake)
+  (quote ice)
+  (quote (chocolate ice and vanilla ice))))
+; (chocolate cake and vanilla cake)
