@@ -214,3 +214,23 @@
   (quote fish)
   (quote (chips and fish or fish and fried))))
 ; TIMEOUT
+
+; 182
+(define multiinsertL
+  (lambda (new old lat)
+    (cond
+      ((null? lat) (quote ()))
+      (else
+        (cond
+          ((eq? (car lat) old)
+            (cons new
+              (cons old
+                (multiinsertL new old (cdr lat)))))
+          (else (cons (car lat)
+                  (multiinsertL new old (cdr lat)))))))))
+
+(print (multiinsertL
+  (quote fried)
+  (quote fish)
+  (quote (chips and fish or fish and fried))))
+; (chips and fried fish or fried fish and fried)
