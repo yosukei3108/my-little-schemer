@@ -174,3 +174,23 @@
     (quote cup)
     (quote (coffee cup tea cup and hick cup))))
 ; (coffee tea and hick)
+
+; 179
+(define multiinsertR
+  (lambda (new old lat)
+    (cond
+      ((null? lat) (quote ()))
+      (else
+        (cond
+          ((eq? (car lat) old)
+            (cons old
+              (cons new
+                (multiinsertR new old (cdr lat)))))
+          (else (cons (car lat)
+                  (multiinsertR new old (cdr lat)))))))))
+
+(print (multiinsertR
+  (quote cream)
+  (quote ice)
+  (quote (chocolate ice and vanilla ice))))
+; (chocolate ice cream and vanilla ice cream)
