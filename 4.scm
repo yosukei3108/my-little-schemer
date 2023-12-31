@@ -39,3 +39,20 @@
 (print
   (sub1 5))
 ; 4
+
+; 9
+(print
+  (zero? 0))
+; #t
+
+;12
+(define myadd
+  (lambda (n m)
+    (cond
+      ((zero? m) n)
+      (else (add1 (myadd n (sub1 m)))))))
+
+; 11
+(print
+  (myadd 46 12))
+; 58
