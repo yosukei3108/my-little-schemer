@@ -56,3 +56,20 @@
 (print
   (myadd 46 12))
 ; 58
+
+; 18
+(define mysub
+  (lambda (n m)
+    (cond
+      ((zero? m) n)
+      (else (sub1 (mysub n (sub1 m)))))))
+
+; 15
+(print
+  (mysub 14 3))
+; 11
+
+; 17
+(print
+  (mysub 18 25))
+; -7
