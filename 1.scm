@@ -30,6 +30,11 @@
 ; 45
 (print (cons (quote a) (quote b))) ; (a . b) ; 脚注 5
 
+; 49
+(print (null? (quote ()))) ; #t
+(print (null? '())) ; #t
+(print (null? ())) ; #t
+
 ; 51
 (print (null? (quote spaghetti))) ; #f ; 脚注 8
 
