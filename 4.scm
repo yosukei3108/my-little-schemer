@@ -73,3 +73,14 @@
 (print
   (mysub 18 25))
 ; -7
+
+; 50
+(define addtup
+  (lambda (tup)
+    (cond
+      ((null? tup) 0)
+      (else (myadd (car tup) (addtup (cdr tup)))))))
+
+; 25
+(print (addtup (quote(3 5 2 8))))
+; 18
