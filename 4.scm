@@ -84,3 +84,18 @@
 ; 25
 (print (addtup (quote(3 5 2 8))))
 ; 18
+
+; 57
+(define myprod
+  (lambda (n m)
+    (cond
+      ((zero? m) 0)
+      (else (myadd n (myprod n (sub1 m)))))))
+
+; 51
+(print (myprod 5 3))
+; 15
+
+; 52
+(print (myprod 13 4))
+; 52
