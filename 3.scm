@@ -118,6 +118,23 @@
 ; 141
 ; (ice cream with fudge topping for dessert)
 
+; 144
+(define insertL
+  (lambda (new old lat)
+    (cond
+      ((null? lat) (quote ()))
+      (else (cond
+              ((eq? (car lat) old)
+                 (cons new lat))
+              (else (cons (car lat)
+                      (insertL new old (cdr lat)))))))))
+(print
+  (insertL
+    (quote topping)
+    (quote fudge)
+    (quote (ice cream with fudge for dessert))))
+; (ice cream with topping fudge for dessert)
+
 ; 145
 ; (define subst2
 ;   (lambda (new o1 o2 lat)
