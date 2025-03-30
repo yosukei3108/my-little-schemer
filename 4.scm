@@ -99,3 +99,20 @@
 ; 52
 (print (myprod 13 4))
 ; 52
+
+; 82
+(define myadd_for_tuple
+  (lambda (tup1 tup2)
+    (cond
+      ((and (null? tup1) (null? tup2)) (quote ()))
+      (else
+        (cons (myadd (car tup1) (car tup2))
+              (myadd_for_tuple (cdr tup1) (cdr tup2)))))))
+
+; 73
+(print (myadd_for_tuple (quote(3 6 9 11 4)) (quote(8 5 2 0 7))))
+; (11 11 11 11 11)
+
+; 74
+(print (myadd_for_tuple (quote(2 3)) (quote(4 6))))
+; (6 9)
