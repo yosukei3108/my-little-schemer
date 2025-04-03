@@ -116,3 +116,29 @@
 ; 74
 (print (myadd_for_tuple (quote(2 3)) (quote(4 6))))
 ; (6 9)
+
+; 100
+(define myadd_for_tuple2
+  (lambda (tup1 tup2)
+    (cond
+      ((and (null? tup1) (null? tup2)) (quote ()))
+      ((null? tup1) tup2)
+      ((null? tup2) tup1)
+      (else
+        (cons (myadd (car tup1) (car tup2))
+              (myadd_for_tuple2 (cdr tup1) (cdr tup2)))))))
+
+(print (myadd_for_tuple2 (quote(3 7)) (quote(4 6 8 1))))
+; (7 13 8 1)
+
+(define myadd_for_tuple3
+  (lambda (tup1 tup2)
+    (cond
+      ((null? tup1) tup2)
+      ((null? tup2) tup1)
+      (else
+        (cons (myadd (car tup1) (car tup2))
+              (myadd_for_tuple3 (cdr tup1) (cdr tup2)))))))
+
+(print (myadd_for_tuple3 (quote(3 7 8 1)) (quote(4 6))))
+; (7 13 8 1)
