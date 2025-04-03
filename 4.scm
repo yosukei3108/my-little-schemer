@@ -142,3 +142,34 @@
 
 (print (myadd_for_tuple3 (quote(3 7 8 1)) (quote(4 6))))
 ; (7 13 8 1)
+
+; 109
+(define gt1
+  (lambda (n m)
+    (cond
+      ((zero? m) #t)
+      ((zero? n) #f)
+      (else (gt1 (sub1 n) (sub1 m))))))
+
+; 103
+(print (gt1 12 133))
+; #f
+
+; 104
+(print (gt1 120 11))
+; #t
+
+; 110
+(print (gt1 3 3))
+; #t
+
+; 125
+(define gt2
+  (lambda (n m)
+    (cond
+      ((zero? n) #f)
+      ((zero? m) #t)
+      (else (gt2 (sub1 n) (sub1 m))))))
+
+(print (gt2 3 3))
+; #f
