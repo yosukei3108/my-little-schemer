@@ -190,3 +190,17 @@
 
 (print (lt 2 2))
 ; #f
+
+(print "; 135: myexpt")
+
+(define myexpt
+  (lambda (n m)
+    (cond
+      ((zero? m) 1)
+      (else (myprod n (myexpt n (sub1 m))))
+    )
+  )
+)
+
+(print (myexpt 2 3))
+; 8
