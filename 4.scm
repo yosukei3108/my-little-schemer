@@ -312,3 +312,27 @@
 (print "; (no-nums '(5 pears 6 prunes 9 dates)) returns:")
 (print (no-nums '(5 pears 6 prunes 9 dates)))
 ; (pears prunes dates)
+
+(print "; 155: all-nums")
+
+(define all-nums
+  (lambda (lat)
+    (cond
+      ((null? lat) (quote ()))
+      (else
+        (cond
+          ((number? (car lat)) (cons
+                                 (car lat)
+                                 (all-nums (cdr lat))
+                               )
+          )
+          (else (all-nums (cdr lat)))
+        )
+      )
+    )
+  )
+)
+
+(print "; (all-nums '(5 pears 6 prunes 9 dates)) returns:")
+(print (all-nums '(5 pears 6 prunes 9 dates)))
+; (5 6 9)
