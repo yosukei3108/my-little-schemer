@@ -191,6 +191,23 @@
 (print (lt 2 2))
 ; #f
 
+(print "; 130")
+(define eq
+  (lambda (n m)
+    (cond
+      ((gt2 n m) #f)
+      ((lt n m) #f)
+      (else #t))))
+
+(print (eq 5 5))
+; #t
+
+(print (eq 4 5))
+; #f
+
+(print (eq 5 4))
+; #f
+
 (print "; 135: myexpt")
 
 (define myexpt
