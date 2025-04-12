@@ -204,3 +204,20 @@
 
 (print (myexpt 2 3))
 ; 8
+
+(print "; 140: myquotient")
+
+(define myquotient
+  (lambda (n m)
+    (cond
+      ((lt n m) 0)
+      (else (add1 (myquotient (mysub n m) m)))
+    )
+  )
+)
+
+(print "; (myquotient 7 3) returns:")
+(print (myquotient 7 3))
+
+(print "; (myquotient 15 4) returns:")
+(print (myquotient 15 4))
