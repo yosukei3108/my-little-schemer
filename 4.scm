@@ -235,9 +235,11 @@
 
 (print "; (myquotient 7 3) returns:")
 (print (myquotient 7 3))
+; 2
 
 (print "; (myquotient 15 4) returns:")
 (print (myquotient 15 4))
+; 3
 
 (print "; 145: length")
 
@@ -252,6 +254,7 @@
 
 (print "; (length '(hotdogs with mustard sauerkraut and pickles)) returns:")
 (print (length '(hotdogs with mustard sauerkraut and pickles)))
+; 6
 
 (print "; 148: pick")
 
@@ -266,3 +269,23 @@
 
 (print "; (pick 4 '(lasagna spaghetti ravioli macaroni meatball)) returns:")
 (print (pick 4 '(lasagna spaghetti ravioli macaroni meatball)))
+; macaroni
+
+(print "; 150: removing-pick")
+; zero? を使ったリストの再帰 (rember は、null? を使ったリストの再帰だった)
+(define removing-pick
+  (lambda (n lat)
+    (cond
+      ((zero? (sub1 n)) (cdr lat))
+      (else (cons 
+              (car lat)
+              (removing-pick (sub1 n) (cdr lat))
+            )
+      )
+    )
+  )
+)
+
+(print "; (removing-pick 3 '(hotdog with hot mustard)) returns:")
+(print (removing-pick 3 '(hotdog with hot mustard)))
+; (hotdog with mustard)
