@@ -173,3 +173,20 @@
 
 (print (gt2 3 3))
 ; #f
+
+; 129
+(define lt
+  (lambda (n m)
+    (cond
+      ((zero? m) #f)
+      ((zero? n) #t)
+      (else (lt (sub1 n) (sub1 m))))))
+
+(print (lt 2 3))
+; #t
+
+(print (lt 3 2))
+; #f
+
+(print (lt 2 2))
+; #f
