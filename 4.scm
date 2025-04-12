@@ -238,3 +238,31 @@
 
 (print "; (myquotient 15 4) returns:")
 (print (myquotient 15 4))
+
+(print "; 145: length")
+
+(define length
+  (lambda (lat)
+    (cond
+      ((null? lat) 0)
+      (else (add1 (length (cdr lat))))
+    )
+  )
+)
+
+(print "; (length '(hotdogs with mustard sauerkraut and pickles)) returns:")
+(print (length '(hotdogs with mustard sauerkraut and pickles)))
+
+(print "; 148: pick")
+
+(define pick
+  (lambda (n lat)
+    (cond
+      ((zero? (sub1 n)) (car lat))
+      (else (pick (sub1 n) (cdr lat)))
+    )
+  )
+)
+
+(print "; (pick 4 '(lasagna spaghetti ravioli macaroni meatball)) returns:")
+(print (pick 4 '(lasagna spaghetti ravioli macaroni meatball)))
