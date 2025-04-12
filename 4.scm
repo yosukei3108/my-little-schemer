@@ -289,3 +289,26 @@
 (print "; (removing-pick 3 '(hotdog with hot mustard)) returns:")
 (print (removing-pick 3 '(hotdog with hot mustard)))
 ; (hotdog with mustard)
+
+(print "; 154: no-nums")
+
+(define no-nums
+  (lambda (lat)
+    (cond
+      ((null? lat) (quote ()))
+      (else (cond
+              ((number? (car lat)) (no-nums (cdr lat)))
+              (else (cons
+                      (car lat)
+                      (no-nums (cdr lat))
+                    )
+              )
+            )
+      )
+    )
+  )
+)
+
+(print "; (no-nums '(5 pears 6 prunes 9 dates)) returns:")
+(print (no-nums '(5 pears 6 prunes 9 dates)))
+; (pears prunes dates)
