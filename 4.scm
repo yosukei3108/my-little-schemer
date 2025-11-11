@@ -336,3 +336,28 @@
 (print "; (all-nums '(5 pears 6 prunes 9 dates)) returns:")
 (print (all-nums '(5 pears 6 prunes 9 dates)))
 ; (5 6 9)
+
+(print "; 156: eqan?")
+
+(define equivalent_number_or_atom?
+  (lambda (a1 a2)
+    (cond
+      ((and (number? a1) (number? a2)) (= a1 a2))
+      ((or (number? a1) (number? a2)) #f)
+      (else (eq? a1 a2))
+    )
+  )
+)
+
+(print (equivalent_number_or_atom? 1 1))
+(print (equivalent_number_or_atom? 1 2))
+(print (equivalent_number_or_atom? 'cat 'cat))
+(print (equivalent_number_or_atom? 'cat 'dog))
+(print (equivalent_number_or_atom? '(cat) '(cat)))
+(print (equivalent_number_or_atom? '(cat) '(dog)))
+; #t
+; #f
+; #t
+; #f
+; #f
+; #f
